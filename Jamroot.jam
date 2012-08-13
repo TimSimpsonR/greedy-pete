@@ -1,0 +1,23 @@
+###############################################################################
+#  -----------
+#  Greedy Pete
+#  -----------
+###############################################################################
+
+
+import os ;
+using testing ;
+
+project
+	:	requirements
+		<include>src
+		<include>/usr/include
+		<include>$(BOOST_ROOT)
+		<variant>debug:<define>_DEBUG
+        ;
+
+lib lib_stdc++ : : <name>stdc++ ;
+
+exe greedy-pete
+    :   src/greedy_pete.cc
+    ;
